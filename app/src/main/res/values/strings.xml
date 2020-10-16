@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">PreInterviewTask</string>
+    <string name="title">title</string>
+    <string name="deleteItem">Delete item</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+</resources>
