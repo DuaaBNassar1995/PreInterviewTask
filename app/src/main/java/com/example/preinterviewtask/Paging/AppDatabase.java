@@ -1,4 +1,4 @@
-package com.example.preinterviewtask.ViewModel;
+package com.example.preinterviewtask.Paging;
 
 import android.content.Context;
 

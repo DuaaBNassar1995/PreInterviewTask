@@ -1,4 +1,4 @@
-package com.example.preinterviewtask.ViewModel;
+package com.example.preinterviewtask.Paging;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.MutableLiveData;

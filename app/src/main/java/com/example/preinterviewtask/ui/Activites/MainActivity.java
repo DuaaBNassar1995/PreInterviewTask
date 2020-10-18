@@ -13,17 +13,17 @@ import android.view.View;
 
 import com.example.preinterviewtask.Interface.CustomItemClickListener;
 import com.example.preinterviewtask.Object.Item;
-import com.example.preinterviewtask.ViewModel.ItemViewModel;
+import com.example.preinterviewtask.Paging.ItemViewModel;
 import com.example.preinterviewtask.Types.Keys;
 import com.example.preinterviewtask.R;
-import com.example.preinterviewtask.Adapter.RecycleAdapter;
+import com.example.preinterviewtask.Adapter.ItemRecycleAdapter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
 public class MainActivity extends AppCompatActivity {
     public static String TYPE = "TYPE";
     public static String ITEM = "ITEM";
-    private RecycleAdapter adapter;
+    private ItemRecycleAdapter adapter;
     private ItemViewModel feedViewModel;
 
 
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
 
 
-        adapter = new RecycleAdapter(this, new CustomItemClickListener() {
+        adapter = new ItemRecycleAdapter(this, new CustomItemClickListener() {
             @Override
             public void onItemClick(View v, int position, Item item) {
                 openDetails(Keys.viewType, item);

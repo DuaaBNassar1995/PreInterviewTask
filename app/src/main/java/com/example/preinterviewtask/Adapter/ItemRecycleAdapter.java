@@ -19,7 +19,7 @@ import com.example.preinterviewtask.Types.NetworkState;
 import com.example.preinterviewtask.Object.Item;
 import com.example.preinterviewtask.R;
 
-public class RecycleAdapter extends PagedListAdapter<Item, RecycleAdapter.NetworkItemBinding> {
+public class ItemRecycleAdapter extends PagedListAdapter<Item, ItemRecycleAdapter.ItemViewHolder> {
     private static final int TYPE_PROGRESS = 0;
     private static final int TYPE_ITEM = 1;
 
@@ -30,14 +30,14 @@ public class RecycleAdapter extends PagedListAdapter<Item, RecycleAdapter.Networ
     private CustomItemClickListener deleteListener;
     private CustomItemClickListener updateListener;
 
-    public RecycleAdapter(Context context) {
+    public ItemRecycleAdapter(Context context) {
         super(DIFF_CALLBACK);
         this.context = context;
     }
 
-    public RecycleAdapter(Context context, CustomItemClickListener itemClickListener,
-                          CustomItemClickListener deleteListener,
-                          CustomItemClickListener updateListener) {
+    public ItemRecycleAdapter(Context context, CustomItemClickListener itemClickListener,
+                              CustomItemClickListener deleteListener,
+                              CustomItemClickListener updateListener) {
         super(DIFF_CALLBACK);
         this.context = context;
         this.deleteListener = deleteListener;
@@ -65,14 +65,14 @@ public class RecycleAdapter extends PagedListAdapter<Item, RecycleAdapter.Networ
     }
     @NonNull
     @Override
-    public NetworkItemBinding onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.item_layout, parent, false);
-        return new NetworkItemBinding(view);
+        return new ItemViewHolder(view);
 
     }
 
     @Override
-    public void onBindViewHolder(@NonNull NetworkItemBinding holder, int position) {
+    public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
         Item item = getItem(position);
 
         if (item != null) {
@@ -121,18 +121,19 @@ public class RecycleAdapter extends PagedListAdapter<Item, RecycleAdapter.Networ
                 }
             };
 
-    class NetworkItemBinding extends RecyclerView.ViewHolder {
+    class ItemViewHolder extends RecyclerView.ViewHolder {
 
         TextView textView;
         ImageButton deleteBtn ,updateBtn ;
 
-        public NetworkItemBinding(View itemView) {
+        public ItemViewHolder(View itemView) {
             super(itemView);
             textView = itemView.findViewById(R.id.title);
             deleteBtn = itemView.findViewById(R.id.delete);
             updateBtn = itemView.findViewById(R.id.edit);
         }
     }
+
     public void setNetworkState(NetworkState newNetworkState) {
         NetworkState previousState = this.networkState;
         boolean previousExtraRow = hasExtraRow();
@@ -148,6 +149,4 @@ public class RecycleAdapter extends PagedListAdapter<Item, RecycleAdapter.Networ
             notifyItemChanged(getItemCount() - 1);
         }
     }
-
-
 }
