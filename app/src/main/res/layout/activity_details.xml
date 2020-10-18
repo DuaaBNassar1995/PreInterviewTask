@@ -7,31 +7,43 @@
     android:layout_height="match_parent"
     tools:context=".ui.Activites.DetailsActivity">
 
-    <com.facebook.drawee.view.SimpleDraweeView
+    <ImageView
         android:id="@+id/imageAvatar"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginTop="10dp"
-        android:padding="10dp"
-        app:backgroundImage="@drawable/avatar_contact"
-        app:failureImage="@drawable/avatar_contact"
+        android:background="@drawable/avatar_contact"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:roundAsCircle="true">
-    </com.facebook.drawee.view.SimpleDraweeView>
+        android:scaleType="centerCrop"
+   >
+    </ImageView>
 
-    <TextView
+    <EditText
         android:id="@+id/title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="20dp"
         android:textSize="20sp"
         android:textColor="@color/black"
-        android:text="@string/app_name"
-        android:layout_width="wrap_content"
+        android:hint="@string/title"
+        android:textColorHint="@color/silver"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="20dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/imageAvatar">
-    </TextView>
+    </EditText>
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:text="@string/save"
+        android:layout_marginTop="20dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/title">
+    </Button>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

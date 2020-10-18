@@ -6,5 +6,6 @@
     <color name="red">#E30606</color>
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
+    <color name="silver">#B5B6B6</color>
     <color name="background_item">#EFEFEF</color>
 </resources>

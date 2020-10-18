@@ -4,4 +4,7 @@
     <string name="deleteItem">Delete item</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
+    <string name="add">Add</string>
+    <string name="save">Save</string>
+    <string name="External_storage">External storage</string>
 </resources>

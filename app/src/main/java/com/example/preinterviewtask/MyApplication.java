@@ -10,4 +10,5 @@ public class MyApplication extends Application {
         Fresco.initialize(getApplicationContext());
         super.onCreate();
     }
+
 }
